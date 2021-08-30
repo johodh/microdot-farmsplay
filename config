@@ -1,0 +1,30 @@
+# the script is currently able to fetch balances of at least the listed forks from alltheblocks.net
+# other forks should probably work as well, if you're into the even more obscure ones 
+# set enable = 1 at the ones you want to use
+# make sure the "short" setting is accurate, as it is needed to correctly parse the html
+# there is no support for sum of multiple addresses yet
+
+[chia]
+enabled = 1
+short = XCH
+address1 = xch.. 
+
+[flora]
+enabled = 0
+short = XFL
+address1 = xfl.. 
+
+[flax]
+enabled = 0
+short = XFX
+address1  = xfx.. 
+ 
+[spare] 
+enabled = 0
+short = SPARE
+address1 = spare..
+
+[silicoin]
+enabled = 0
+short = TSIT
+address1 = tsit..
