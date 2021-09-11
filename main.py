@@ -43,18 +43,22 @@ def printBalances(balances):
 #    show()
 
 while True: 
-    freshBalances=getPostBalances()
-    for currency in freshBalances: 
-        if float(freshBalances[currency][1]) > float(yeOldBalances[currency][1]): 
-            winRoutine(freshBalances[currency][0],yeOldBalances[currency][1],freshBalances[currency][1])
-            print 'debug: running win routine'
+    try:
+        freshBalances=getPostBalances()
+    
+    except: 
+        print('getPostBalances() failed')
 
-    printBalances(freshBalances) 
+    else:    
+        for currency in freshBalances: 
+            if float(freshBalances[currency][1]) > float(yeOldBalances[currency][1]): 
+                winRoutine(freshBalances[currency][0],yeOldBalances[currency][1],freshBalances[currency][1])
+                print 'debug: running win routine'
+        printBalances(freshBalances) 
 
     # debug
     print freshBalances
     print yeOldBalances
 
-    # sleep 2 minutes before fetching balances from alltheblocks.net again
-    time.sleep(120)
+    time.sleep(180)
 
